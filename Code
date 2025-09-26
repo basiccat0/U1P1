@@ -17,18 +17,18 @@ public class Main {
         double tipvalue = (double) tip / 100;
         double tipamount = (bill * tipvalue);
         Double total = bill + tipamount;
-        double splittip = tipamount / people;
 
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.00");
         String finaltip = df.format(tipamount);
         String roundedtotal = df.format(total);
-
+        String splittip = df.format(tipamount / people);
+        String splitbill = df.format(total / people);
 
 //results
         System.out.print("Total amount is: " + roundedtotal);
         System.out.println();
         System.out.println(("Tip is: " ) + finaltip + ". Each person pays an extra " + splittip + " dollars for tip.");
-        System.out.println("In total, each person pays " + (total / people) + " for the total bill.");
+        System.out.println("In total, each person pays " + (splitbill) + " for the total bill.");
 
     }
     }
